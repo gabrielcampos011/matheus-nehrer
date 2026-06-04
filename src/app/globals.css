@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+@theme {
+  --font-beautique: var(--font-beautique), serif;
+  --font-sora: var(--font-sora), sans-serif;
+
+  --color-brand-blue: #95ABB2;
+  --color-brand-gray: #B0AEAF;
+  --color-brand-off-white: #E9E8E8;
+  --color-brand-cream: #E5DFD6;
+  --color-brand-orange: #BE5103;
+  --color-brand-dark: #2B2B2B;
+  --color-brand-white: #FFFFFF;
+}
+
+@layer base {
+  body {
+    background-color: #E9E8E8;
+    color: #2B2B2B;
+    font-family: var(--font-sora), sans-serif;
+  }
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(149, 171, 178, 0.25);
+  box-shadow: 0 4px 24px rgba(149, 171, 178, 0.12);
+}
+
+@utility glass-cream {
+  background: rgba(229, 223, 214, 0.60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(149, 171, 178, 0.20);
+  box-shadow: 0 4px 16px rgba(149, 171, 178, 0.10);
+}
+
+@utility glass-dark {
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+@utility glass-nav {
+  background: rgba(233, 232, 232, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(149, 171, 178, 0.20);
+}
+
+@utility glass-hero {
+  background: rgba(229, 223, 214, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(149, 171, 178, 0.20);
+}
