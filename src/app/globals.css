@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-beautique: var(--font-beautique), serif;
-  --font-sora: var(--font-sora), sans-serif;
+  --font-beautique: 'Beautique Display', serif;
+  --font-sora: 'Sora', sans-serif;
 
   --color-brand-blue: #95ABB2;
   --color-brand-gray: #B0AEAF;
@@ -15,8 +15,8 @@
 
 @layer base {
   body {
-    background-color: #E9E8E8;
-    color: #2B2B2B;
+    background-color: var(--color-brand-off-white);
+    color: var(--color-brand-dark);
     font-family: var(--font-sora), sans-serif;
   }
 }
