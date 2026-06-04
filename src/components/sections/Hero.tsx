@@ -6,7 +6,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 
 export function Hero() {
   return (
-    <section className="relative w-full h-dvh overflow-hidden">
+    <section className="relative w-full min-h-[480px] h-[65vh] overflow-hidden">
       <PlaceholderImage
         label="FOTO 1 — Dr. Matheus, pose profissional"
         aspectRatio="auto"
