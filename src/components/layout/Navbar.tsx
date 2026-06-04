@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { CTAButton } from '@/components/ui/CTAButton'
 
@@ -34,7 +35,7 @@ export function Navbar() {
         )}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" aria-label="Início">
+          <Link href="/" aria-label="Início">
             <Image
               src="/logo.png"
               alt="Dr. Matheus Nehrer"
@@ -43,7 +44,7 @@ export function Navbar() {
               className="h-8 w-auto object-contain"
               priority
             />
-          </a>
+          </Link>
 
           <button
             onClick={() => setDrawerOpen(true)}
