@@ -1,4 +1,5 @@
 import { CTAButton } from '@/components/ui/CTAButton'
+import { GlassCard } from '@/components/ui/GlassCard'
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
 
 export function Hero() {
@@ -13,7 +14,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-brand-cream/60 via-transparent to-transparent" />
 
       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-        <div className="glass-hero rounded-t-2xl md:rounded-2xl max-w-lg p-8 md:p-10 space-y-4">
+        <GlassCard variant="hero" rounded="lg" className="max-w-lg p-8 md:p-10 space-y-4">
           <span className="font-sora font-semibold text-[11px] uppercase tracking-[0.2em] text-brand-blue">
             Dr. Matheus Nehrer
           </span>
@@ -27,7 +28,7 @@ export function Hero() {
           >
             Agende pelo WhatsApp →
           </CTAButton>
-        </div>
+        </GlassCard>
       </div>
     </section>
   )

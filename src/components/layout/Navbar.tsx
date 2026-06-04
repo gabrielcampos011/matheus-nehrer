@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { CTAButton } from '@/components/ui/CTAButton'
 
 const navLinks = [
   { label: 'Sobre', href: '#sobre' },
@@ -90,15 +91,16 @@ export function Navbar() {
           </a>
         ))}
 
-        <a
-          href="https://wa.me/5500000000000"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleLinkClick}
-          className="mt-6 inline-flex items-center justify-center gap-2 bg-brand-orange text-white rounded-full px-6 py-3 font-sora font-semibold text-sm transition-all hover:bg-brand-orange/90"
-        >
-          Agende uma consulta
-        </a>
+        <div onClick={handleLinkClick}>
+          <CTAButton
+            href="https://wa.me/5500000000000"
+            variant="primary"
+            className="mt-6 w-full justify-center"
+            target="_blank"
+          >
+            Agende uma consulta
+          </CTAButton>
+        </div>
       </nav>
     </>
   )
