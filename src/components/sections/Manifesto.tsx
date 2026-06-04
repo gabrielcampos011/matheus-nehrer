@@ -1,3 +1,4 @@
+import { MessageCircle } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -17,7 +18,7 @@ export function Manifesto() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
-          <div className="space-y-6">
+          <div className="space-y-6 border-l-4 border-brand-blue pl-8">
             <SectionLabel>Sobre</SectionLabel>
             <h2 className="font-beautique italic text-3xl md:text-4xl text-brand-dark leading-snug">
               Dermatologia com naturalidade.<br />Saúde com propósito.
@@ -29,6 +30,7 @@ export function Manifesto() {
               Combinando ciência médica, tecnologias e um olhar refinado, criaremos planos de tratamento sob medida para cuidar da saúde, da qualidade e da juventude da sua pele.
             </p>
             <CTAButton href="https://wa.me/5500000000000" variant="outline">
+              <MessageCircle size={15} />
               Agende uma consulta
             </CTAButton>
           </div>

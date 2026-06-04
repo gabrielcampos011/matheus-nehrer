@@ -1,6 +1,8 @@
+import { ChevronDown, MessageCircle } from 'lucide-react'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
+import { SectionLabel } from '@/components/ui/SectionLabel'
 
 export function Hero() {
   return (
@@ -11,24 +13,35 @@ export function Hero() {
         className="absolute inset-0 w-full h-full rounded-none"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-cream/60 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-cream/70 via-brand-cream/10 to-transparent" />
 
-      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-        <GlassCard variant="hero" rounded="lg" className="max-w-lg p-8 md:p-10 space-y-4">
-          <span className="font-sora font-semibold text-[11px] uppercase tracking-[0.2em] text-brand-blue">
-            Dr. Matheus Nehrer
-          </span>
-          <h1 className="font-beautique font-light text-4xl md:text-5xl text-brand-dark leading-tight">
-            Dermatologia com<br />naturalidade
+      {/* Card principal */}
+      <div className="absolute inset-0 flex flex-col justify-end md:justify-center px-6 md:px-16 pb-20 md:pb-0">
+        <GlassCard
+          variant="hero"
+          rounded="lg"
+          className="max-w-xl p-8 md:p-10 space-y-5 border-l-4 border-brand-blue"
+        >
+          <SectionLabel>Dermatologia com naturalidade</SectionLabel>
+
+          <h1 className="font-beautique font-light text-5xl md:text-6xl text-brand-dark leading-tight">
+            Dr. Matheus<br />Nehrer
           </h1>
-          <CTAButton
-            href="https://wa.me/5500000000000"
-            variant="primary"
-            className="mt-2"
-          >
-            Agende pelo WhatsApp →
+
+          <p className="font-sora font-light text-sm text-brand-dark/60 leading-relaxed">
+            Especialista em Dermatologia Estética e Clínica · RQE 70655
+          </p>
+
+          <CTAButton href="https://wa.me/5500000000000" variant="primary">
+            <MessageCircle size={16} />
+            Agende pelo WhatsApp
           </CTAButton>
         </GlassCard>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none">
+        <ChevronDown size={28} className="text-brand-blue/60 animate-bounce" />
       </div>
     </section>
   )

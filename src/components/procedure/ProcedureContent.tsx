@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ArrowLeft, ChevronRight } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
@@ -14,12 +15,13 @@ export function ProcedureContent({ procedure }: ProcedureContentProps) {
       <div className="max-w-6xl mx-auto space-y-10">
 
         <nav className="flex items-center gap-2 font-sora text-sm flex-wrap">
-          <Link href="/#procedimentos" className="text-brand-blue hover:underline">
-            ← Início
+          <Link href="/#procedimentos" className="inline-flex items-center gap-1 text-brand-blue hover:underline">
+            <ArrowLeft size={14} />
+            Início
           </Link>
-          <span className="text-brand-gray">/</span>
+          <ChevronRight size={14} className="text-brand-gray" />
           <span className="text-brand-gray">Procedimentos</span>
-          <span className="text-brand-gray">/</span>
+          <ChevronRight size={14} className="text-brand-gray" />
           <span className="text-brand-dark font-semibold">{procedure.name}</span>
         </nav>
 

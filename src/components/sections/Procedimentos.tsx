@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { Sparkles, Stethoscope, Scissors, Leaf, ArrowRight } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -17,12 +18,19 @@ const categoryShortLabels: Record<Category, string> = {
   capilar: 'Capilar',
 }
 
+const categoryIcons: Record<Category, React.ReactNode> = {
+  estetica: <Sparkles size={14} />,
+  clinica: <Stethoscope size={14} />,
+  cirurgica: <Scissors size={14} />,
+  capilar: <Leaf size={14} />,
+}
+
 export function Procedimentos() {
   const [activeCategory, setActiveCategory] = useState<Category>('estetica')
   const filtered = procedures.filter((p) => p.category === activeCategory)
 
   return (
-    <section id="procedimentos" className="bg-brand-off-white py-20 px-6">
+    <section id="procedimentos" className="bg-gradient-to-b from-brand-off-white to-brand-blue/5 py-20 px-6">
       <div className="max-w-6xl mx-auto space-y-10">
 
         <AnimatedSection className="space-y-2">
@@ -39,12 +47,13 @@ export function Procedimentos() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  'px-4 py-2 rounded-full font-sora font-semibold text-xs transition-all duration-200',
+                  'inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-sora font-semibold text-xs transition-all duration-200',
                   activeCategory === cat
                     ? 'bg-brand-blue text-white shadow-sm'
                     : 'text-brand-gray hover:text-brand-blue'
                 )}
               >
+                {categoryIcons[cat]}
                 {categoryShortLabels[cat]}
               </button>
             ))}
@@ -65,9 +74,9 @@ export function Procedimentos() {
                 </div>
                 <Link
                   href={`/procedimentos/${procedure.slug}`}
-                  className="font-sora font-semibold text-sm text-brand-blue hover:text-brand-blue/70 transition-colors self-start"
+                  className="inline-flex items-center gap-1.5 font-sora font-semibold text-sm text-brand-blue hover:text-brand-blue/70 transition-colors self-start group-hover:gap-2"
                 >
-                  Saiba mais →
+                  Saiba mais <ArrowRight size={14} />
                 </Link>
               </GlassCard>
             </AnimatedSection>

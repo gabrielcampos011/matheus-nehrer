@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { ChevronDown } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -64,14 +65,13 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         <p className="font-sora font-semibold text-sm text-brand-dark leading-snug">
           {question}
         </p>
-        <span
+        <ChevronDown
+          size={18}
           className={cn(
-            'text-brand-blue text-xl font-light transition-transform duration-200 shrink-0',
-            open ? 'rotate-45' : 'rotate-0'
+            'text-brand-blue shrink-0 transition-transform duration-300',
+            open ? 'rotate-180' : 'rotate-0'
           )}
-        >
-          +
-        </span>
+        />
       </div>
       <AnimatePresence initial={false}>
         {open && (

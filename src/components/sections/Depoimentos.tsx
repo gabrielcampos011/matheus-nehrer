@@ -1,13 +1,17 @@
 'use client'
 
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { testimonials } from '@/data/testimonials'
 
 export function Depoimentos() {
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start' })
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, align: 'start' },
+    [Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })]
+  )
 
   return (
     <section id="depoimentos" className="bg-brand-blue py-20 px-6">

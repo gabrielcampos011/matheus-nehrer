@@ -58,3 +58,8 @@
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(149, 171, 178, 0.20);
 }
+
+@utility glass-blue-accent {
+  background: rgba(149, 171, 178, 0.08);
+  border: 1px solid rgba(149, 171, 178, 0.20);
+}

@@ -1,3 +1,4 @@
+import { MapPin, Phone } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -17,14 +18,22 @@ export function Clinicas() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {clinics.map((clinic, i) => (
             <AnimatedSection key={clinic.id} delay={i * 0.12}>
-              <GlassCard variant="cream" className="p-8 space-y-3">
+              <GlassCard variant="cream" className="p-8 space-y-4">
                 <h3 className="font-beautique font-medium text-2xl text-brand-dark">
                   {clinic.name}
                 </h3>
-                <div className="space-y-1">
-                  <p className="font-sora font-light text-sm text-brand-dark/70">{clinic.address}</p>
-                  <p className="font-sora font-light text-sm text-brand-dark/70">{clinic.city}</p>
-                  <p className="font-sora font-semibold text-sm text-brand-blue">{clinic.phone}</p>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-2.5">
+                    <MapPin size={14} className="text-brand-blue mt-0.5 shrink-0" />
+                    <div>
+                      <p className="font-sora font-light text-sm text-brand-dark/70">{clinic.address}</p>
+                      <p className="font-sora font-light text-sm text-brand-dark/70">{clinic.city}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Phone size={14} className="text-brand-blue shrink-0" />
+                    <p className="font-sora font-semibold text-sm text-brand-blue">{clinic.phone}</p>
+                  </div>
                 </div>
               </GlassCard>
             </AnimatedSection>

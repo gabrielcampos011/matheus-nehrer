@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Menu, X, MessageCircle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { CTAButton } from '@/components/ui/CTAButton'
 
@@ -49,11 +50,9 @@ export function Navbar() {
           <button
             onClick={() => setDrawerOpen(true)}
             aria-label="Abrir menu"
-            className="flex flex-col gap-1.5 p-2"
+            className="p-2 hover:opacity-70 transition-opacity"
           >
-            <span className="block w-6 h-0.5 bg-brand-blue transition-all" />
-            <span className="block w-6 h-0.5 bg-brand-blue transition-all" />
-            <span className="block w-4 h-0.5 bg-brand-blue transition-all" />
+            <Menu size={22} className="text-brand-blue" />
           </button>
         </div>
       </header>
@@ -75,10 +74,10 @@ export function Navbar() {
       >
         <button
           onClick={() => setDrawerOpen(false)}
-          className="absolute top-5 right-6 text-brand-blue text-2xl font-light"
+          className="absolute top-5 right-6 p-1 hover:opacity-70 transition-opacity"
           aria-label="Fechar menu"
         >
-          ×
+          <X size={22} className="text-brand-blue" />
         </button>
 
         {navLinks.map((link) => (
@@ -92,13 +91,14 @@ export function Navbar() {
           </a>
         ))}
 
-        <div onClick={handleLinkClick}>
+        <div onClick={handleLinkClick} className="mt-6">
           <CTAButton
             href="https://wa.me/5500000000000"
             variant="primary"
-            className="mt-6 w-full justify-center"
+            className="w-full justify-center"
             target="_blank"
           >
+            <MessageCircle size={15} />
             Agende uma consulta
           </CTAButton>
         </div>
