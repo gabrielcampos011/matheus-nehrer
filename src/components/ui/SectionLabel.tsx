@@ -10,7 +10,7 @@ export function SectionLabel({ children, light = false, className }: SectionLabe
   return (
     <span
       className={cn(
-        'font-sora font-semibold text-[11px] uppercase tracking-[0.2em]',
+        'font-beautique font-medium text-[11px] uppercase tracking-[0.2em]',
         light ? 'text-brand-off-white/80' : 'text-brand-blue',
         className
       )}

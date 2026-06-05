@@ -35,7 +35,7 @@ export function Procedimentos() {
 
         <AnimatedSection className="space-y-2">
           <SectionLabel>Procedimentos</SectionLabel>
-          <h2 className="font-beautique text-3xl md:text-4xl text-brand-dark">
+          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-brand-dark">
             {categoryLabels[activeCategory]}
           </h2>
         </AnimatedSection>

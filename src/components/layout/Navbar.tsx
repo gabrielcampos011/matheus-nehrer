@@ -31,12 +31,17 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-50',
+          'bg-brand-cream/75 backdrop-blur-xl',
+          'border-b border-brand-blue/20',
+          'transition-all duration-300',
           scrolled ? 'shadow-sm' : ''
         )}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" aria-label="Início">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
+
+          {/* Logo */}
+          <Link href="/" aria-label="Início" className="shrink-0">
             <Image
               src="/logo.png"
               alt="Dr. Matheus Nehrer"
@@ -47,26 +52,59 @@ export function Navbar() {
             />
           </Link>
 
+          {/* Desktop — links de navegação */}
+          <nav className="hidden md:flex items-center gap-7">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="font-sora font-medium text-sm text-brand-dark/70 hover:text-brand-dark transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Desktop — CTA */}
+          <div className="hidden md:block shrink-0">
+            <CTAButton
+              href="https://api.whatsapp.com/send?phone=5532984775220"
+              variant="primary"
+              className="text-xs px-4 py-2.5"
+              target="_blank"
+            >
+              <MessageCircle size={14} />
+              Agendar consulta
+            </CTAButton>
+          </div>
+
+          {/* Mobile — hambúrguer */}
           <button
             onClick={() => setDrawerOpen(true)}
             aria-label="Abrir menu"
-            className="p-2 hover:opacity-70 transition-opacity"
+            className="p-2 hover:opacity-70 transition-opacity md:hidden"
           >
             <Menu size={22} className="text-brand-blue" />
           </button>
+
         </div>
       </header>
 
+      {/* Overlay mobile */}
       {drawerOpen && (
         <div
-          className="fixed inset-0 z-40 bg-brand-dark/30 backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-brand-dark/30 backdrop-blur-sm md:hidden"
           onClick={() => setDrawerOpen(false)}
         />
       )}
 
+      {/* Offcanvas mobile */}
       <nav
         className={cn(
-          'fixed top-0 right-0 bottom-0 z-50 w-72 glass-nav flex flex-col pt-20 px-8 gap-2',
+          'fixed top-0 right-0 bottom-0 z-50 w-72 md:hidden',
+          'bg-brand-cream/90 backdrop-blur-xl',
+          'border-l border-brand-blue/20',
+          'flex flex-col pt-20 px-8 gap-2',
           'transition-transform duration-300',
           drawerOpen ? 'translate-x-0' : 'translate-x-full'
         )}
@@ -93,7 +131,7 @@ export function Navbar() {
 
         <div onClick={handleLinkClick} className="mt-6">
           <CTAButton
-            href="https://wa.me/5500000000000"
+            href="https://api.whatsapp.com/send?phone=5532984775220"
             variant="primary"
             className="w-full justify-center"
             target="_blank"

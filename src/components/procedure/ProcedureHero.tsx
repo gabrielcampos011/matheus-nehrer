@@ -22,7 +22,7 @@ export function ProcedureHero({ procedure }: ProcedureHeroProps) {
             <span className="font-sora font-semibold text-[11px] uppercase tracking-[0.2em] text-brand-blue">
               {categoryLabels[procedure.category]}
             </span>
-            <h1 className="font-beautique text-3xl md:text-4xl text-brand-dark">
+            <h1 className="font-sora font-extrabold text-3xl md:text-4xl text-brand-dark">
               {procedure.name}
             </h1>
           </GlassCard>

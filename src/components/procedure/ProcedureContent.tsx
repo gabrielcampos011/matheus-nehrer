@@ -27,7 +27,7 @@ export function ProcedureContent({ procedure }: ProcedureContentProps) {
 
         <div className="grid md:grid-cols-[3fr_2fr] gap-8 items-start">
           <AnimatedSection>
-            <GlassCard className="p-8 space-y-4">
+            <GlassCard className="p-8 space-y-4 hover:scale-[1.02] transition-transform duration-200">
               {procedure.fullDescription.split('\n\n').map((paragraph, i) => (
                 <p
                   key={i}
@@ -40,7 +40,7 @@ export function ProcedureContent({ procedure }: ProcedureContentProps) {
           </AnimatedSection>
 
           <AnimatedSection delay={0.15}>
-            <GlassCard variant="cream" className="overflow-hidden p-0">
+            <GlassCard variant="cream" className="overflow-hidden p-0 hover:scale-[1.02] transition-transform duration-200">
               <PlaceholderImage
                 label={`Foto do procedimento — ${procedure.name}`}
                 aspectRatio="4/3"

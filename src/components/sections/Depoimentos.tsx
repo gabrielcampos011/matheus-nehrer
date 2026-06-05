@@ -19,7 +19,7 @@ export function Depoimentos() {
 
         <AnimatedSection className="space-y-2">
           <SectionLabel light>Pacientes</SectionLabel>
-          <h2 className="font-beautique text-3xl md:text-4xl text-white">
+          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-white">
             O que dizem os pacientes
           </h2>
         </AnimatedSection>
@@ -32,7 +32,7 @@ export function Depoimentos() {
                   key={t.id}
                   className="flex-none w-[85vw] sm:w-[45vw] lg:w-[30vw]"
                 >
-                  <GlassCard variant="dark" className="p-7 space-y-5 h-full">
+                  <GlassCard variant="dark" className="p-7 space-y-5 h-full hover:scale-[1.02] transition-transform duration-200">
                     <p className="font-beautique italic text-4xl text-white/40 leading-none">❝</p>
                     <p className="font-sora font-light text-sm text-white leading-relaxed">
                       {t.text}

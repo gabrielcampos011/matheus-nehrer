@@ -10,8 +10,8 @@ export function ProcedureCTA({ procedure }: ProcedureCTAProps) {
   return (
     <section className="bg-brand-blue py-16 px-6">
       <div className="max-w-lg mx-auto">
-        <GlassCard variant="dark" className="p-10 text-center space-y-4">
-          <h2 className="font-beautique text-2xl md:text-3xl text-white leading-snug">
+        <GlassCard variant="dark" className="p-10 text-center space-y-4 hover:scale-[1.02] transition-transform duration-200">
+          <h2 className="font-sora font-extrabold text-2xl md:text-3xl text-white leading-snug">
             Tem interesse em {procedure.name}?<br />
             Agende sua avaliação.
           </h2>
@@ -19,7 +19,7 @@ export function ProcedureCTA({ procedure }: ProcedureCTAProps) {
             Atendimento personalizado e resultado natural.
           </p>
           <CTAButton
-            href="https://wa.me/5500000000000"
+            href="https://api.whatsapp.com/send?phone=5532984775220"
             variant="ghost"
             className="mx-auto"
           >
