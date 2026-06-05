@@ -24,6 +24,9 @@ export function Hero() {
         priority
       />
 
+      {/* Overlay apenas à esquerda */}
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-cream/88 via-brand-cream/50 to-transparent" />
+
       {/* Copy */}
       <div className="relative h-full flex items-center px-8 md:px-16 lg:px-24">
         <div className="space-y-6 max-w-md">
