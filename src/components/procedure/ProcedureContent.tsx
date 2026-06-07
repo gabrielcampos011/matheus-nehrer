@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { GlassCard } from '@/components/ui/GlassCard'
-import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
 import { type Procedure } from '@/data/procedures'
 
 interface ProcedureContentProps {
@@ -25,30 +24,18 @@ export function ProcedureContent({ procedure }: ProcedureContentProps) {
           <span className="text-brand-dark font-semibold">{procedure.name}</span>
         </nav>
 
-        <div className="grid md:grid-cols-[3fr_2fr] gap-8 items-start">
-          <AnimatedSection>
-            <GlassCard className="p-8 space-y-4 hover:scale-[1.02] transition-transform duration-200">
-              {procedure.fullDescription.split('\n\n').map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="font-sora font-light text-base text-brand-dark/75 leading-[1.8]"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </GlassCard>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.15}>
-            <GlassCard variant="cream" className="overflow-hidden p-0 hover:scale-[1.02] transition-transform duration-200">
-              <PlaceholderImage
-                label={`Foto do procedimento — ${procedure.name}`}
-                aspectRatio="4/3"
-                className="rounded-none"
-              />
-            </GlassCard>
-          </AnimatedSection>
-        </div>
+        <AnimatedSection>
+          <GlassCard className="p-8 space-y-4 hover:scale-[1.02] transition-transform duration-200">
+            {procedure.fullDescription.split('\n\n').map((paragraph, i) => (
+              <p
+                key={i}
+                className="font-sora font-light text-base text-brand-dark/75 leading-[1.8]"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </GlassCard>
+        </AnimatedSection>
 
       </div>
     </section>
