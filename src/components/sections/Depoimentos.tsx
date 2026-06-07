@@ -1,7 +1,7 @@
 'use client'
 
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
+import AutoScroll from 'embla-carousel-auto-scroll'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -9,8 +9,8 @@ import { testimonials } from '@/data/testimonials'
 
 export function Depoimentos() {
   const [emblaRef] = useEmblaCarousel(
-    { loop: true, align: 'start' },
-    [Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })]
+    { loop: true, align: 'start', dragFree: true },
+    [AutoScroll({ speed: 1, stopOnInteraction: false, stopOnMouseEnter: true, startDelay: 0 })]
   )
 
   return (
@@ -26,11 +26,11 @@ export function Depoimentos() {
 
         <AnimatedSection delay={0.15}>
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-5">
+            <div className="flex">
               {testimonials.map((t) => (
                 <div
                   key={t.id}
-                  className="flex-none w-[85vw] sm:w-[45vw] lg:w-[30vw]"
+                  className="flex-none w-[72vw] sm:w-[38vw] lg:w-[25vw] pl-5"
                 >
                   <GlassCard variant="dark" className="p-7 space-y-5 h-full hover:scale-[1.02] transition-transform duration-200">
                     <p className="font-beautique italic text-4xl text-white/40 leading-none">❝</p>

@@ -1,4 +1,4 @@
-import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
+import Image from 'next/image'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { categoryLabels, type Procedure } from '@/data/procedures'
 
@@ -9,10 +9,12 @@ interface ProcedureHeroProps {
 export function ProcedureHero({ procedure }: ProcedureHeroProps) {
   return (
     <section className="relative h-[300px] overflow-hidden">
-      <PlaceholderImage
-        label={`FOTO — ${procedure.name}`}
-        aspectRatio="auto"
-        className="absolute inset-0 w-full h-full rounded-none"
+      <Image
+        src="/bg-hero-internas.webp"
+        alt=""
+        fill
+        className="object-cover"
+        priority
       />
       <div className="absolute inset-0 bg-gradient-to-t from-brand-cream/70 via-transparent to-transparent" />
 

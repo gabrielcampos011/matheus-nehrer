@@ -32,8 +32,8 @@ export function Navbar() {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-50',
-          'bg-brand-cream/75 backdrop-blur-xl',
-          'border-b border-brand-blue/20',
+          'bg-white/15 backdrop-blur-xl',
+          'border-b border-white/20',
           'transition-all duration-300',
           scrolled ? 'shadow-sm' : ''
         )}
@@ -58,7 +58,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-sora font-medium text-sm text-brand-dark/70 hover:text-brand-dark transition-colors"
+                className="font-sora font-medium text-sm text-[#57666b] hover:text-[#57666b]/80 transition-colors"
               >
                 {link.label}
               </a>
@@ -102,8 +102,8 @@ export function Navbar() {
       <nav
         className={cn(
           'fixed top-0 right-0 bottom-0 z-50 w-72 md:hidden',
-          'bg-brand-cream/90 backdrop-blur-xl',
-          'border-l border-brand-blue/20',
+          'bg-white/15 backdrop-blur-xl',
+          'border-l border-white/20',
           'flex flex-col pt-20 px-8 gap-2',
           'transition-transform duration-300',
           drawerOpen ? 'translate-x-0' : 'translate-x-full'

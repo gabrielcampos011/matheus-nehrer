@@ -16,7 +16,7 @@ export function Clinicas() {
       <div className="max-w-6xl mx-auto space-y-10">
         <AnimatedSection className="space-y-2">
           <SectionLabel>Atendimento</SectionLabel>
-          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-brand-dark">
+          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-[#95ABB2]">
             Onde atendo
           </h2>
         </AnimatedSection>

@@ -9,7 +9,7 @@ export function Hero() {
 
       {/* Background — desktop */}
       <Image
-        src="/hero-desktop.webp"
+        src="/hero-desktop-v3.webp"
         alt="Dr. Matheus Nehrer"
         fill
         className="object-cover hidden md:block"
@@ -24,26 +24,25 @@ export function Hero() {
         priority
       />
 
-      {/* Overlay apenas à esquerda */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-cream/88 via-brand-cream/50 to-transparent" />
-
       {/* Copy */}
-      <div className="relative h-full flex items-center px-8 md:px-16 lg:px-24">
-        <div className="space-y-6 max-w-md">
-          <SectionLabel>Dermatologia com naturalidade</SectionLabel>
+      <div className="relative h-full w-full flex items-start pt-16 md:items-center md:pt-0">
+        <div className="w-full lg:max-w-[1000px] xl:max-w-[1100px] mx-auto px-6">
+          <div className="space-y-6 max-w-md">
+            <SectionLabel>Dermatologia com naturalidade</SectionLabel>
 
-          <h1 className="font-sora font-extrabold text-5xl md:text-6xl lg:text-7xl text-brand-dark leading-tight">
-            Dr. Matheus<br />Nehrer
-          </h1>
+            <h1 className="font-sora font-extrabold text-5xl md:text-6xl lg:text-7xl text-brand-dark leading-tight">
+              Dr. Matheus<br />Nehrer
+            </h1>
 
-          <p className="font-sora font-light text-sm text-brand-dark/70 leading-relaxed">
-            Especialista em Dermatologia Estética e Clínica · RQE 70655
-          </p>
+            <p className="font-sora font-light text-sm text-brand-dark/70 leading-relaxed">
+              Especialista em Dermatologia Estética e Clínica · RQE 70655
+            </p>
 
-          <CTAButton href="https://api.whatsapp.com/send?phone=5532984775220" variant="primary">
-            <MessageCircle size={16} />
-            Agende pelo WhatsApp
-          </CTAButton>
+            <CTAButton href="https://api.whatsapp.com/send?phone=5532984775220" variant="primary">
+              <MessageCircle size={16} />
+              Agende pelo WhatsApp
+            </CTAButton>
+          </div>
         </div>
       </div>
 

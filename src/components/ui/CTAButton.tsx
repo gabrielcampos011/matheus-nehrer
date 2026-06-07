@@ -29,7 +29,7 @@ export function CTAButton({
       target={target}
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       className={cn(
-        'inline-flex items-center gap-2 px-6 py-3 rounded-full font-sora font-semibold text-sm transition-all duration-200',
+        'inline-flex items-center gap-2 px-6 py-3 rounded-full font-sora font-semibold text-sm transition-all duration-200 hover:translate-y-1',
         variantStyles[variant],
         className
       )}

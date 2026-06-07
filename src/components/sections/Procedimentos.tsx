@@ -35,13 +35,13 @@ export function Procedimentos() {
 
         <AnimatedSection className="space-y-2">
           <SectionLabel>Procedimentos</SectionLabel>
-          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-brand-dark">
+          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-[#95ABB2]">
             {categoryLabels[activeCategory]}
           </h2>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div className="glass rounded-full p-1.5 inline-flex gap-1 flex-wrap">
+          <div className="glass rounded-full p-1.5 flex gap-1 overflow-x-auto [&::-webkit-scrollbar]:hidden md:inline-flex md:flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat}

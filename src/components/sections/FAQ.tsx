@@ -97,7 +97,7 @@ export function FAQ() {
       <div className="max-w-3xl mx-auto space-y-6">
         <AnimatedSection className="space-y-2">
           <SectionLabel>Dúvidas</SectionLabel>
-          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-brand-dark">
+          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-[#95ABB2]">
             Perguntas frequentes
           </h2>
         </AnimatedSection>
