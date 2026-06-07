@@ -33,13 +33,11 @@ export function Procedimentos() {
     <section id="procedimentos" className="bg-gradient-to-b from-brand-off-white to-brand-blue/5 py-20 px-6">
       <div className="max-w-6xl mx-auto space-y-10">
 
-        <AnimatedSection className="space-y-3">
+        <AnimatedSection className="space-y-2">
           <SectionLabel>Procedimentos</SectionLabel>
-          <GlassCard className="px-5 py-3 inline-block">
-            <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-[#95ABB2]">
-              {categoryLabels[activeCategory]}
-            </h2>
-          </GlassCard>
+          <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-[#95ABB2]">
+            {categoryLabels[activeCategory]}
+          </h2>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
