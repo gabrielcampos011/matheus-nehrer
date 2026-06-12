@@ -53,7 +53,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop — links de navegação */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden min-[900px]:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -66,7 +66,7 @@ export function Navbar() {
           </nav>
 
           {/* Desktop — CTA */}
-          <div className="hidden md:block shrink-0">
+          <div className="hidden min-[900px]:block shrink-0">
             <CTAButton
               href="https://api.whatsapp.com/send?phone=5532984775220"
               variant="primary"
@@ -82,7 +82,7 @@ export function Navbar() {
           <button
             onClick={() => setDrawerOpen(true)}
             aria-label="Abrir menu"
-            className="p-2 hover:opacity-70 transition-opacity md:hidden"
+            className="p-2 hover:opacity-70 transition-opacity min-[900px]:hidden"
           >
             <Menu size={22} className="text-brand-blue" />
           </button>
@@ -93,7 +93,7 @@ export function Navbar() {
       {/* Overlay mobile */}
       {drawerOpen && (
         <div
-          className="fixed inset-0 z-40 bg-brand-dark/30 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-40 bg-brand-dark/30 backdrop-blur-sm min-[900px]:hidden"
           onClick={() => setDrawerOpen(false)}
         />
       )}
@@ -101,7 +101,7 @@ export function Navbar() {
       {/* Offcanvas mobile */}
       <nav
         className={cn(
-          'fixed top-0 right-0 bottom-0 z-50 w-72 md:hidden',
+          'fixed top-0 right-0 bottom-0 z-50 w-72 min-[900px]:hidden',
           'bg-white/15 backdrop-blur-xl',
           'border-l border-white/20',
           'flex flex-col pt-20 px-8 gap-2',
