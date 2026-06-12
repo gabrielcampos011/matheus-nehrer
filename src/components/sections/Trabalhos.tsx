@@ -1,59 +1,100 @@
-import Image from 'next/image'
+import { ExternalLink } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
-import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 
-const workItems = [
+type Publication = {
+  type?: string
+  title: string
+  venue: string
+  href?: string
+}
+
+const publications: Publication[] = [
   {
-    id: 1,
-    title: 'Congresso Brasileiro de Dermatologia',
-    year: '2024',
-    image: '/trabalho-congresso.webp',
+    type: 'Artigo',
+    title: 'Síndrome DRESS associada a Atenolol: relato de caso e breve revisão de literatura',
+    venue: 'Brazilian Journal of Health Review',
+    href: 'https://ojs.brazilianjournals.com.br/ojs/index.php/BJHR/article/view/70348',
   },
   {
-    id: 2,
-    title: 'Publicação em Revista Especializada',
-    year: '2024',
-    image: '/trabalho-revista.webp',
+    type: 'Relato de caso',
+    title: 'Nevo epidérmico verrucoso inflamatório linear: um tratamento desafiador',
+    venue: '78º Congresso da Sociedade Brasileira de Dermatologia · 2025',
   },
   {
-    id: 3,
-    title: 'Apresentação de Caso Clínico',
-    year: '2023',
-    image: '/trabalho-caso-clinico.webp',
+    type: 'Relato de caso',
+    title: 'Pustulose exantemática generalizada aguda em paciente portador de psoríase vulgar: um relato de caso',
+    venue: '78º Congresso da Sociedade Brasileira de Dermatologia · 2025',
+  },
+  {
+    type: 'Relato de caso',
+    title: 'Fibromixoma acral superficial em quirodáctilo simulando fibroqueratoma digital adquirido: um relato de caso',
+    venue: '78º Congresso da Sociedade Brasileira de Dermatologia · 2025',
+  },
+  {
+    type: 'Relato de caso',
+    title: 'Melanoma amelanótico desmoplásico em paciente com vitiligo: um desafio diagnóstico e a importância da dermatoscopia',
+    venue: '78º Congresso da Sociedade Brasileira de Dermatologia · 2025',
+  },
+  {
+    title: 'Micose fungoide hipocromiante durante tratamento com tamoxifeno',
+    venue: '77º Congresso da Sociedade Brasileira de Dermatologia · 2024',
+  },
+  {
+    title: 'Líquen escleroso extragenital: apresentação inusitada',
+    venue: '77º Congresso da Sociedade Brasileira de Dermatologia · 2024',
+  },
+  {
+    title: 'Mastocitose cutânea maculopapular polimórfica: um relato de caso',
+    venue: '77º Congresso da Sociedade Brasileira de Dermatologia · 2024',
   },
 ]
 
 export function Trabalhos() {
   return (
     <section id="trabalhos" className="bg-white py-20 px-6">
-      <div className="max-w-6xl mx-auto space-y-10">
+      <div className="max-w-4xl mx-auto space-y-10">
+
         <AnimatedSection className="space-y-2">
           <SectionLabel>Produção Científica</SectionLabel>
           <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-[#95ABB2]">
-            Trabalhos Apresentados
+            Publicações e trabalhos apresentados
           </h2>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {workItems.map((item, i) => (
-            <AnimatedSection key={item.id} delay={i * 0.1}>
-              <GlassCard className="p-0 overflow-hidden hover:scale-[1.02] transition-transform duration-200">
-                <div className="relative aspect-[3/2]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {publications.map((pub, i) => (
+            <AnimatedSection key={i} delay={i * 0.05}>
+              <div className="glass rounded-xl p-6 flex flex-col gap-3 h-full group hover:scale-[1.02] transition-transform duration-200">
+                <div className="flex items-start justify-between gap-2">
+                  {pub.type ? (
+                    <span className="font-sora font-semibold text-[10px] uppercase tracking-[0.15em] text-brand-orange">
+                      {pub.type}
+                    </span>
+                  ) : (
+                    <span className="font-sora font-semibold text-[10px] uppercase tracking-[0.15em] text-brand-blue/60">
+                      Congresso
+                    </span>
+                  )}
+                  {pub.href && (
+                    <a
+                      href={pub.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Ver publicação"
+                      className="shrink-0 text-brand-blue hover:text-brand-orange transition-colors"
+                    >
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
                 </div>
-                <div className="p-5 space-y-1">
-                  <p className="font-sora font-semibold text-base text-brand-dark leading-snug">
-                    {item.title}
-                  </p>
-                  <p className="font-sora text-xs text-brand-gray">{item.year}</p>
-                </div>
-              </GlassCard>
+                <p className="font-sora font-semibold text-sm text-brand-dark leading-snug flex-1">
+                  {pub.title}
+                </p>
+                <p className="font-sora font-light text-xs text-brand-dark/50">
+                  {pub.venue}
+                </p>
+              </div>
             </AnimatedSection>
           ))}
         </div>

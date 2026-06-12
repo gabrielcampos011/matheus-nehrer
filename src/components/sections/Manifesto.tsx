@@ -31,7 +31,7 @@ export function Manifesto() {
             <p className="font-sora font-light text-base text-white/80 leading-relaxed">
               Combinando ciência médica, tecnologias e um olhar refinado, criaremos planos de tratamento sob medida para cuidar da saúde, da qualidade e da juventude da sua pele.
             </p>
-            <CTAButton href="https://api.whatsapp.com/send?phone=5532984775220" variant="ghost">
+            <CTAButton href="https://api.whatsapp.com/send?phone=5532984775220&text=Ol%C3%A1!%20Vim%20do%20site%20do%20Dr.%20Matheus%20Nehrer%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20ele" variant="ghost">
               <MessageCircle size={15} />
               Agende uma consulta
             </CTAButton>

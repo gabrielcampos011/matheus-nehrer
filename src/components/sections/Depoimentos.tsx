@@ -18,7 +18,7 @@ export function Depoimentos() {
       <div className="max-w-6xl mx-auto space-y-10">
 
         <AnimatedSection className="space-y-2">
-          <SectionLabel light>Pacientes</SectionLabel>
+          <SectionLabel light>Depoimentos</SectionLabel>
           <h2 className="font-sora font-extrabold text-3xl md:text-4xl text-white">
             O que dizem os pacientes
           </h2>
@@ -43,7 +43,7 @@ export function Depoimentos() {
                       </div>
                       <div>
                         <p className="font-sora font-semibold text-sm text-white">{t.name}</p>
-                        <p className="font-sora text-xs text-brand-off-white/60">
+                        <p className="text-sm text-[#FBBF24] tracking-wide">
                           {'★'.repeat(t.rating)}
                         </p>
                       </div>

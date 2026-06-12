@@ -13,9 +13,9 @@ export default function Home() {
       <Hero />
       <Manifesto />
       <Procedimentos />
-      <Trabalhos />
       <Depoimentos />
       <Clinicas />
+      <Trabalhos />
       <FAQ />
       <CTAFinal />
     </main>

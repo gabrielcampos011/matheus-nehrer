@@ -1,5 +1,15 @@
 import Image from 'next/image'
-import { Globe, MessageCircle } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
+
+function InstagramIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
 
 const navLinks = [
   { label: 'Sobre', href: '/#sobre' },
@@ -12,9 +22,10 @@ const navLinks = [
 const procedureLinks = [
   { label: 'Botox', href: '/procedimentos/botox' },
   { label: 'Bioestimuladores de Colágeno', href: '/procedimentos/bioestimuladores-de-colageno' },
+  { label: 'Preenchedores', href: '/procedimentos/preenchedores' },
   { label: 'Microagulhamento', href: '/procedimentos/microagulhamento' },
-  { label: 'Acne', href: '/procedimentos/acne' },
-  { label: 'Câncer de Pele', href: '/procedimentos/cancer-de-pele' },
+  { label: 'Mesoterapia', href: '/procedimentos/mesoterapia' },
+  { label: 'Peelings Químicos', href: '/procedimentos/peelings-quimicos' },
 ]
 
 export function Footer() {
@@ -39,7 +50,7 @@ export function Footer() {
                 Dr. Matheus Nehrer
               </p>
               <p className="font-sora text-xs tracking-widest uppercase text-white/60">
-                Dermatologista · RQE 70655
+                Dermatologista - CRM MG 79986 | RQE 70655
               </p>
             </div>
             <p className="font-sora font-light text-sm text-white/70 leading-relaxed max-w-xs">
@@ -54,7 +65,7 @@ export function Footer() {
                 aria-label="Instagram"
                 className="w-9 h-9 rounded-full bg-white/15 border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/25 transition-all"
               >
-                <Globe size={16} />
+                <InstagramIcon size={16} />
               </a>
               <a
                 href="https://api.whatsapp.com/send?phone=5532984775220"
@@ -150,7 +161,7 @@ export function Footer() {
             © {new Date().getFullYear()} Dr. Matheus Nehrer · Todos os direitos reservados
           </p>
           <p className="font-sora text-[11px] text-white/40">
-            CRM · RQE 70655
+            CRM MG 79986 | RQE 70655
           </p>
         </div>
 

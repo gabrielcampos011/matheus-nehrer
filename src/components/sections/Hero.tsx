@@ -28,15 +28,18 @@ export function Hero() {
       <div className="relative h-full w-full flex items-start pt-16 md:items-center md:pt-0">
         <div className="w-full lg:max-w-[1000px] xl:max-w-[1100px] mx-auto px-6">
           <div className="space-y-6 max-w-md">
-            <SectionLabel>Dermatologia com naturalidade</SectionLabel>
-
-            <h1 className="font-sora font-extrabold text-5xl md:text-6xl lg:text-7xl text-brand-dark leading-tight">
-              Dr. Matheus<br />Nehrer
+            <h1 className="font-sora font-extrabold text-4xl md:text-5xl lg:text-6xl text-brand-dark leading-tight whitespace-nowrap">
+              Dr. Matheus Nehrer
             </h1>
 
-            <p className="font-sora font-light text-sm text-brand-dark/70 leading-relaxed">
-              Especialista em Dermatologia Estética e Clínica · RQE 70655
+            <p className="font-sora font-semibold text-xl md:text-2xl text-brand-blue tracking-wide">
+              Dermatologia com naturalidade
             </p>
+
+            <div className="font-sora font-light text-sm text-brand-dark/70 leading-relaxed space-y-0.5">
+              <p>Médico Dermatologista | UFJF</p>
+              <p>CRM MG 79986 | RQE 70655</p>
+            </div>
 
             <CTAButton href="https://api.whatsapp.com/send?phone=5532984775220" variant="primary">
               <MessageCircle size={16} />
